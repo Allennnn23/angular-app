@@ -1,0 +1,22 @@
+<nz-layout>
+    <nz-header>Onboarding App</nz-header>
+    <nz-content>
+        <nz-table #basicTable [nzData]="userList">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList; let i = index">    
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+    </tbody>
+</nz-table>
+    </nz-content>
+    <nz-footer>Agent 007</nz-footer>
+</nz-layout>

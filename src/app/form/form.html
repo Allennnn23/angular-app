@@ -1,0 +1,30 @@
+<div class="user-form-container">
+    <h2>New User Onboarding Request</h2>
+
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+        <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
+            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your name!">
+                <input nz-input id="name" formControlName="name" placeholder="Enter full name" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Email</nz-form-label>
+            <nz-form-control [nzSm]="14" [nzXs]="24" 
+                             [nzErrorTip]="validateForm.get('email')?.hasError('email') ? 'The input is not a valid email!' : 'Please input your email!'">
+                <input nz-input id="email" formControlName="email" placeholder="Enter email address" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item nz-row class="register-area">
+            <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                <button nz-button nzType="primary" [disabled]="!validateForm.valid">
+                    Create User
+                </button>
+            </nz-form-control>
+        </nz-form-item>
+
+    </form>
+</div>
